@@ -1,0 +1,8 @@
+# macOS files
+.DS_Store
+
+# TeX files
+src/*.aux
+src/*.log
+src/*.synctex.gz
+src/*.thm
