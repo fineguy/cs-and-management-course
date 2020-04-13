@@ -23,8 +23,8 @@
 \usepackage{algorithmic}
 \usepackage{bm}
 \usepackage[para,online,flushleft]{threeparttable}
-\graphicspath{ {imgs/} }
-
+%\graphicspath{ {imgs/} }
+\usepackage{xifthen}
 
 %====================================================================
 
@@ -161,3 +161,52 @@ basewidth={0.5em,0.45em},
 \makeatother
 \bibliographystyle{ugost2003s}
 \PrerenderUnicode{ЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮйцукенгшщзхъэждлорпавыфячсмитьбю}
+
+
+%----------Use frames for text
+\usepackage{mdframed}
+\newcommand{\myframe}[1]{
+\begin{mdframed}
+\begin{center}
+#1
+\end{center}
+\end{mdframed}
+}
+
+%----------Setup Math stuff
+\newtheorem{definition}{Определение}[section]
+\newtheorem{proof}{Доказательство}
+\newtheorem{theorem}{Теорема}
+
+\newcommand{\mydefinition}[1]{
+\myframe{
+\theoremstyle{definition}
+\begin{definition}
+#1
+\end{definition}
+}}
+
+\newcommand{\myproof}[1]{
+\theoremstyle{proof}
+\begin{proof}
+#1
+\end{proof}
+}
+
+\newcommand{\mytheorem}[1]{
+\myframe{
+\theoremstyle{theorem}
+\begin{theorem}
+#1
+\end{theorem}
+}}
+
+\newcommand{\myequation}[2][]{
+\begin{equation}
+\ifthenelse{\equal{#1}{}}{
+\begin{aligned}#2,\end{aligned}
+}{
+\left.\begin{aligned}#2\end{aligned}\right\} #1
+}
+\end{equation}
+}
