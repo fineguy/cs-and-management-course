@@ -49,7 +49,6 @@ singlelinecheck=false,%
 skip=3pt}
 
 %---------Настройка подписей к таблицам
-\captionsetup{figurename=Рисунок}
 %\setbeamertemplate{caption}[numbered]
 %\setbeamertemplate{footline}[frame number]
 \newcommand{\rulesep}{\unskip\ \vrule\ }
@@ -171,6 +170,21 @@ basewidth={0.5em,0.45em},
 #1
 \end{center}
 \end{mdframed}
+}
+
+%----------Setup images
+\captionsetup{figurename=Рисунок}
+
+\newcommand{\myimage}[4]{ % source?; width; caption; img
+\begin{figure}[h]
+\centering
+\includegraphics[width=#2\textwidth]{#4}
+\caption{#3}
+\ifthenelse{\equal{#1}{}}{
+}{
+\source{#1}
+}
+\end{figure}
 }
 
 %----------Setup Math stuff
