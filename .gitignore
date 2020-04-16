@@ -2,6 +2,9 @@
 .DS_Store
 
 # TeX files
-src/
-!src/*.tex
+*.aux
+*.log
+*.pdf
+*.synctex.gz
+*.thm
 
