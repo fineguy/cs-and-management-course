@@ -4,6 +4,7 @@
 # TeX files
 *.aux
 *.log
+*.pdf
 *.synctex.gz
 *.thm
 
