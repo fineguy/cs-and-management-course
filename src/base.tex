@@ -222,7 +222,7 @@ basewidth={0.5em,0.45em},
 \newcommand{\myequation}[2][]{
 \begin{equation}
 \ifthenelse{\equal{#1}{}}{
-\begin{aligned}#2,\end{aligned}
+\begin{aligned}#2\end{aligned}
 }{
 \left.\begin{aligned}#2\end{aligned}\right\} #1
 }
